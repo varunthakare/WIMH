@@ -13,6 +13,28 @@ body, html{
   border-radius: 0 0 50% 50%;
   transition: border-radius .5s ease, height .5s ease;
 }
+.navbar-menu{
+  display: flex;
+  position: absolute;
+  margin-top: -8vh;
+  margin-left: 40vw;
+  transition: margin-top .5s ease, margin-left .5s ease,, visibility .6s ease;
+}
+.navbar-menu li{
+  font-size: 3vh;
+  margin-left: 2.5vw;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  list-style-type: none;
+  font-family: 'Poppins',sans-serif;
+  transition: background-color .5s ease;
+}
+.navbar-menu li:hover{
+  background-color: rgba(20, 156, 156, 0.445);
+}
 /*.nav-bar:hover{
   border-radius: 0 0 0 0;
   height: 81vh;
@@ -26,11 +48,11 @@ body, html{
   letter-spacing: 2px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-left: 2.3vw;
-  margin-top: 72vh;
+  margin-top: 71.8vh;
   transition: background-color .5s ease;
   font-size: 2vh;
   font-size: 1.5vw;
-  transition: margin-left .5s ease;
+  transition: margin-left .5s ease, opacity .6s ease, visibility .6s ease;
 }
 .nav-bar-login-btn:hover{
   background-color: rgba(20, 156, 156, 0.445);
@@ -92,12 +114,15 @@ body, html{
 }
 .threelineicon{
   height: 8vh;
-  width: 4.63vw;
+  width: 4.03vw;
   margin-left: 16.2vw;
   margin-top: 71.5vh;
   cursor: pointer;
   border-radius: 8px;
-  transition: margin-left .5s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: margin-left .5s ease, opacity .5s ease, visibility .5s ease;
+  border: none;
 }
 .threelineicon:hover{
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.603);
@@ -116,21 +141,27 @@ body, html{
   z-index: 1000;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+.WIMH-logo-menu-list{
+  height: 17vh;
+  width: 32vw;
+  margin-top: 3vh;
+}
 .threeline-menu-list h3{
   width: 100%;
   height: 7vh;
   top: 0;
+  margin-bottom: -4vh;
   padding-left: 8vw;
   padding-top: 1.5vh;
   color: black;
   list-style-type: none;
   cursor: pointer;
   font-size: 4vh;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition: background-color .5s ease;
 }
 .menu-item{
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 .threeline-menu-list h3:hover{
   background-color: #066106;
