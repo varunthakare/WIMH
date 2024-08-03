@@ -8,22 +8,26 @@
 </head>
 <body id="body" class="body ">
     <div class="nav-bar">
+      <div class="navbar-menu">
+        <li>CONTACT US</li>
+        <li>ABOUT</li>
+        <li>FAQ</li>
+      </div>
       <button onclick="dispLoginDiv()" class="nav-bar-login-btn">LOGIN</button>
       <img class="WIMH-logo" src="./Images/WIMH LOGO.png" alt="not found">
       <div class="search-container">
         <input type="text" class="search-box" id="search-box" placeholder="SEARCH HERE....">
         <ul class="suggestions-list" id="suggestions-list"></ul>
       </div>
-      <img id="threelineicon" class="threelineicon" onclick="mobileMenu()" src="./Images/Untitled design (9).png" alt="not found">
+      <button class="navbar-search-btn">Search</button>
+      <img id="threelineicon" class="threelineicon" onclick="mobileMenu()" src="./Images/threelineicon.png" alt="not found">
     </div>
     <div id="threeline-menu-list" class="threeline-menu-list">
-      <img class="WIMH-logo-menu-list" src="./Images/WIMH LOGO.png" alt="not found">
-      <h3 style="text-decoration: 3px underline solid black;text-underline-offset: 3px;">HOME</h3>
+        <img class="WIMH-logo-menu-list" src="./Images/WIMH LOGO.png" alt="not found">
+      <h3 class="menu-item" onclick="dispLoginDiv()">LOGIN</h3>
       <h3>CONTACT US</h3>
       <h3>ABOUT</h3>
-      <h3>CAREER</h3>
       <h3>FAQ</h3>
-      <h3 class="menu-item" onclick="dispLoginDiv()">LOGIN</h3>
     </div>
     <div id="login-div" class="login-div clear-blur">
       <div class="login-div-left clear-blur">
@@ -44,17 +48,15 @@
       </div>
     </div>
 
-    <img src="Images/backFirstimg.png">
+    
 
-    <div style="height: 10vh;width: 100%;background-color: transparent;margin-top: 0vh;"></div>
-    <div class="navbar-menu">
-      <li style="text-decoration: 3px underline solid rgba(0, 0, 0, 0.616);text-underline-offset: 3px;">HOME</li>
-      <li>CONTACT US</li>
-      <li>ABOUT</li>
-      <li>CAREER</li>
-      <li>FAQ</li>
+    <div style="height: 10vh;width: 100%;margin-top: 0vh;"></div>
+    <div class="hero-div">
+      
     </div>
-    <div style="height: 40vh;width: 1360px;background-color: rgb(102, 31, 116);margin-top: 60vh;"></div>
+    <div style="height: 200px;width: 100vw;background-color: rgb(20, 14, 75);">
+      
+    </div>
 </body>
 <script src="./JAVASCRIPT/script.js"></script>
 </html>

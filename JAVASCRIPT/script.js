@@ -105,41 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const showPasswordCheckbox = document.getElementById('signup-show-pass');
-    const passwordInput = document.getElementById('signup-input-pass');
-    const conpasswordInput = document.getElementById('signup-input-confirm-pass');
-
-    showPasswordCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            passwordInput.type = 'text';
-            conpasswordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-            conpasswordInput.type = 'password';
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const showPasswordCheckbox = document.getElementById('login-show-pass');
-    const passwordInput = document.getElementById('login-input-pass');
-    
-
-    showPasswordCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            passwordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-        }
-    });
-});
-
-
-
-
-
-
 
 
 
@@ -182,6 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
 
 
 
@@ -244,6 +213,7 @@ window.addEventListener('scroll', function() {
     const searchbox = document.querySelector('.search-box');
     const suggestionlist = document.querySelector('.suggestions-list');
     const navbarmenu = document.querySelector('.navbar-menu');
+    const navbarsearchbtn = document.querySelector('.navbar-search-btn');
     if (window.scrollY > 0) {
         navbar.style.borderRadius = "0 0 0 0";
         navbar.style.height= "81vh";
@@ -261,10 +231,11 @@ window.addEventListener('scroll', function() {
         searchcontainer.style.marginTop = "72.3vh";
         searchbox.style.height = "6.35vh";
         suggestionlist.style.marginTop = "5.9vh";
-        navbarmenu.style.marginTop = "7vh";
-        navbarmenu.style.marginLeft = "55vw";
         navbarmenu.style.opacity = "0";
+        navbarmenu.style.marginLeft = "65vw";
         navbarmenu.style.visibility = "hidden";
+        navbarsearchbtn.style.marginTop = "72.3vh";
+        navbarsearchbtn.style.marginLeft = "65.3vw";
     } else {
         navbar.style.borderRadius = "0 0 50% 50%";
         navbar.style.height= "160vh";
@@ -278,13 +249,14 @@ window.addEventListener('scroll', function() {
         threelineicon.style.marginLeft = "16.2vw";
         threelineicon.style.opacity = "0";
         threelineicon.style.visibility = "hidden";
-        searchcontainer.style.marginLeft = "34.19vw";
+        searchcontainer.style.marginLeft = "28.69vw";
         searchcontainer.style.marginTop = "128vh";
         searchbox.style.height = "7.94vh";
         suggestionlist.style.marginTop = "7.9vh";
-        navbarmenu.style.marginTop = "-8vh";
-        navbarmenu.style.marginLeft = "40vw";
         navbarmenu.style.opacity = "1";
+        navbarmenu.style.marginLeft = "60vw";
         navbarmenu.style.visibility = "visible";
+        navbarsearchbtn.style.marginTop = "128.7vh";
+        navbarsearchbtn.style.marginLeft = "60.3vw";
     }
 });
