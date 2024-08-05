@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body id="body" class="body ">
+    <div class="dash-nav-bar">
+      <!--<div class="dash-navbar-menu">
+        <li>CONTACT US</li>
+        <li>ABOUT</li>
+        <li>FAQ</li>
+      </div>-->
+      <img class="dash-profileicon" onclick="dispProfileDiv()" src="./Images/profile-pic (2).png" alt="not found">
+      <img class="dash-WIMH-logo" src="./Images/WIMH LOGO.png" alt="not found">
+      <div class="dash-search-container">
+        <input type="text" class="dash-search-box" id="dash-search-box" placeholder="SEARCH HERE....">
+        <ul class="dash-suggestions-list" id="dash-suggestions-list"></ul>
+      </div>
+      <button class="dash-navbar-search-btn">Search</button>
+      <img id="dash-threelineicon" class="dash-threelineicon" onclick="dashmobileMenu()" src="./Images/threelineicon.png" alt="not found">
+    </div>
+    <div id="dash-threeline-menu-list" class="dash-threeline-menu-list">
+        <img class="dash-WIMH-logo-menu-list" src="./Images/WIMH LOGO.png" alt="not found">
+      <h3 class="dash-menu-item">CONTACT US</h3>
+      <h3>ABOUT</h3>
+      <h3>FAQ</h3>
+      <h3 onclick="dispLoginDiv()">LOGOUT</h3>
+    </div>
+    <div id="profile-div" class="profile-div clear-blur">
+      <div class="profile-pic clear-blur" id="profile-pic">
+
+      </div>
+      <button onclick="openFileDialog()" class="clear-blur">Upload Image</button>
+      <input type="file" id="file-input" class="hidden" accept="image/*" onchange="loadImage(event)">
+    </div>
+
+    
+
+    <div style="height: 10vh;width: 100vw;margin-top: 0vh;"></div>
+    <div class="dash-hero-div">
+      
+    </div>
+    <div style="height: 50vh;width: 100vw;background-color: rgb(20, 14, 75);">
+      
+    </div>
+</body>
+<script src="./JAVASCRIPT/script.js"></script>
+</html>

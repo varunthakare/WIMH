@@ -260,3 +260,175 @@ window.addEventListener('scroll', function() {
         navbarsearchbtn.style.marginLeft = "60.3vw";
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------DASHBOARD PAGE-----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBox = document.getElementById('dash-search-box');
+    const suggestionsList = document.getElementById('dash-suggestions-list');
+    
+    const suggestions = ["Grass", "Grasshopper", "Grassland", "Grassy knoll", "Grassroots", "Grass snake"];
+
+    searchBox.addEventListener('input', function() {
+        const query = searchBox.value.toLowerCase();
+        suggestionsList.innerHTML = '';
+        if (query) {
+            const filteredSuggestions = suggestions.filter(suggestion => 
+                suggestion.toLowerCase().includes(query)
+            );
+            filteredSuggestions.forEach(suggestion => {
+                const listItem = document.createElement('li');
+                listItem.textContent = suggestion;
+                listItem.addEventListener('click', function() {
+                    searchBox.value = suggestion;
+                    suggestionsList.innerHTML = '';
+                });
+                suggestionsList.appendChild(listItem);
+            });
+            suggestionsList.style.display = filteredSuggestions.length ? 'block' : 'none';
+        } else {
+            suggestionsList.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.search-container')) {
+            suggestionsList.style.display = 'none';
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+function dashmobileMenu() {
+    const menuList = document.getElementById('dash-threeline-menu-list');
+    const button = document.querySelector('.dash-threelineicon');
+
+    if (menuList.style.transform === "translateX(100%)" || menuList.style.transform === "") {
+        menuList.style.transform = "translateX(0)";
+        menuList.style.opacity = "1";
+        menuList.style.zIndex = "1";
+        button.style.zIndex = "3";
+    } else {
+        menuList.style.transform = "translateX(100%)";
+        menuList.style.opacity = "0";
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('dash-threeline-menu-list');
+    const button = document.querySelector('.dash-threelineicon');
+    const loginchar = document.querySelector('.login-char');
+    const signupchar = document.querySelector('.signup-char');
+
+    // Check if the click is outside the menu and not on the toggle button
+    if (!menu.contains(event.target) && event.target !== button && event.target !== loginchar && event.target !== signupchar) {
+        menu.style.transform = "translateX(100%)";
+        menu.style.opacity = "0";
+    }
+});
+
+window.addEventListener('scroll', function() {
+    const menuList = document.getElementById('dash-threeline-menu-list');
+    menuList.style.transform = "translateX(100%)";
+    menuList.style.opacity = "0";
+});
+
+
+
+
+
+
+
+
+function dispProfileDiv() {
+    const profileDiv = document.getElementById('profile-div');
+    const body = document.body;
+
+    if (profileDiv.style.opacity === "1") {
+        profileDiv.style.opacity = "0";
+        profileDiv.style.visibility = "hidden";
+        profileDiv.style.transform = "translateY(500px)";
+        body.classList.remove('blurred-body');
+    } else {
+        profileDiv.style.opacity = "1";
+        profileDiv.style.visibility = "visible";
+        profileDiv.style.transform = "translateY(0px)";
+        body.classList.add('blurred-body');
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const profileDiv = document.getElementById('profile-div');
+    const dashprofileicon = document.querySelector('.dash-profileicon');
+    const body = document.body;
+    if (!profileDiv.contains(event.target) && event.target !== dashprofileicon) {
+        profileDiv.style.opacity = "0";
+        profileDiv.style.visibility = "hidden";
+        profileDiv.style.transform = "translateY(500px)";
+        body.classList.remove('blurred-body');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+function openFileDialog() {
+    document.getElementById('file-input').click();
+}
+
+function loadImage(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const imageContainer = document.getElementById('profile-pic');
+        imageContainer.innerHTML = '<img src="' + e.target.result + '" alt="Uploaded Image" class="clear-blur">';
+    }
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
