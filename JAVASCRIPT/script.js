@@ -46,10 +46,18 @@ document.addEventListener('click', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const loginChar = document.querySelector('.login-char');
     const signupChar = document.querySelector('.signup-char');
-    const logininputmail = document.querySelector('.login-input-contact');
+    const logininputcontact = document.querySelector('.login-input-contact');
     const signupinputname = document.querySelector('.signup-input-name');
     const loginInfoContainer = document.querySelector('.login-info-container-div');
     const signupInfoContainer = document.querySelector('.signup-info-container-div');
+    const signupsendotpbtn = document.getElementById('signup-send-otp-btn');
+    const signupinputcontact = document.getElementById('signup-input-contact');
+    const loginsendotpbtn = document.getElementById('login-send-otp-btn');
+    const loginputcontact = document.getElementById('login-input-contact');
+    const signupinputotp = document.getElementById('signup-input-otp');
+    const signupbtn = document.getElementById('signup-btn');
+    const logininputotp = document.getElementById('login-input-otp');
+    const loginbtn = document.getElementById('login-btn');
     
     let isLoginVisible = true;
 
@@ -61,19 +69,39 @@ document.addEventListener('DOMContentLoaded', function() {
         loginInfoContainer.classList.add('hide');
         loginInfoContainer.classList.remove('show');
         loginChar.style.marginTop = '60%';
-        logininputmail.style.marginTop = '63%';
+        logininputcontact.style.marginTop = '63%';
         isLoginVisible = false;
+        loginsendotpbtn.disabled = false;
+        loginputcontact.disabled = false;
+        loginsendotpbtn.style.backgroundColor = 'rgb(16, 214, 66)';
+        loginputcontact.style.backgroundColor = 'white';
+        loginsendotpbtn.style.cursor = 'pointer';
+        loginputcontact.style.cursor = '';
+        logininputotp.style.opacity = '0';
+        logininputotp.style.visibility = 'hidden';
+        logininputotp.style.marginTop = '-5%';
+        loginbtn.style.marginTop = '-5%';
     }
 
     function showLogin() {
         loginChar.style.marginTop = '10%';
-        logininputmail.style.marginTop = '2%';
+        logininputcontact.style.marginTop = '2%';
         loginInfoContainer.classList.add('show');
         loginInfoContainer.classList.remove('hide');
         signupInfoContainer.classList.add('hide');
         signupInfoContainer.classList.remove('show');
         signupChar.style.marginTop = '60%';
         signupinputname.style.marginTop = '63%';
+        signupsendotpbtn.disabled = false;
+        signupinputcontact.disabled = false;
+        signupsendotpbtn.style.backgroundColor = 'rgb(16, 214, 66)';
+        signupinputcontact.style.backgroundColor = 'white';
+        signupsendotpbtn.style.cursor = 'pointer';
+        signupinputcontact.style.cursor = '';
+        signupinputotp.style.opacity = '0';
+        signupinputotp.style.visibility = 'hidden';
+        signupinputotp.style.marginTop = '-5%';
+        signupbtn.style.marginTop = '-5%';
         isLoginVisible = true;
     }
 
@@ -92,12 +120,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize visibility on page load
     loginInfoContainer.classList.add('show');
     signupInfoContainer.classList.add('hide');
-    logininputmail.style.marginTop = '2%';
+    logininputcontact.style.marginTop = '2%';
     signupinputname.style.marginTop = '63%';
 });
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+function loginsendOTP() {
+    const loginsendotpbtn = document.getElementById('login-send-otp-btn');
+    const logininputcontact = document.getElementById('login-input-contact');
+    const logininputotp = document.getElementById('login-input-otp');
+    const loginbtn = document.getElementById('login-btn');
+
+    loginsendotpbtn.disabled = true;
+    logininputcontact.disabled = true;
+    loginsendotpbtn.style.backgroundColor = 'lightgrey';
+    logininputcontact.style.backgroundColor = 'lightgrey';
+    loginsendotpbtn.style.cursor = 'not-allowed';
+    logininputcontact.style.cursor = 'not-allowed';
+    logininputotp.style.opacity = '1';
+    logininputotp.style.visibility = 'visible';
+    logininputotp.style.marginTop = '5%';
+    loginbtn.style.marginTop = '5%';
+}
+
+function signupsendOTP() {
+    const signupsendotpbtn = document.getElementById('signup-send-otp-btn');
+    const signupinputcontact = document.getElementById('signup-input-contact');
+    const signupinputotp = document.getElementById('signup-input-otp');
+    const signupbtn = document.getElementById('signup-btn');
+
+    signupsendotpbtn.disabled = true;
+    signupinputcontact.disabled = true;
+    signupsendotpbtn.style.backgroundColor = 'lightgrey';
+    signupinputcontact.style.backgroundColor = 'lightgrey';
+    signupsendotpbtn.style.cursor = 'not-allowed';
+    signupinputcontact.style.cursor = 'not-allowed';
+    signupinputotp.style.opacity = '1';
+    signupinputotp.style.visibility = 'visible';
+    signupinputotp.style.marginTop = '5%';
+    signupbtn.style.marginTop = '5%';
+}
 
 
 
@@ -234,7 +308,7 @@ window.addEventListener('scroll', function() {
         navbarmenu.style.opacity = "0";
         navbarmenu.style.marginLeft = "65vw";
         navbarmenu.style.visibility = "hidden";
-        navbarsearchbtn.style.marginTop = "72.3vh";
+        navbarsearchbtn.style.marginTop = "72.8vh";
         navbarsearchbtn.style.marginLeft = "65.3vw";
     } else {
         navbar.style.borderRadius = "0 0 50% 50%";
@@ -249,15 +323,15 @@ window.addEventListener('scroll', function() {
         threelineicon.style.marginLeft = "16.2vw";
         threelineicon.style.opacity = "0";
         threelineicon.style.visibility = "hidden";
-        searchcontainer.style.marginLeft = "28.69vw";
+        searchcontainer.style.marginLeft = "29.69vw";
         searchcontainer.style.marginTop = "128vh";
-        searchbox.style.height = "7.94vh";
-        suggestionlist.style.marginTop = "7.9vh";
+        searchbox.style.height = "6.94vh";
+        suggestionlist.style.marginTop = "6.8vh";
         navbarmenu.style.opacity = "1";
         navbarmenu.style.marginLeft = "60vw";
         navbarmenu.style.visibility = "visible";
-        navbarsearchbtn.style.marginTop = "128.7vh";
-        navbarsearchbtn.style.marginLeft = "60.3vw";
+        navbarsearchbtn.style.marginTop = "128.8vh";
+        navbarsearchbtn.style.marginLeft = "61.8vw";
     }
 });
 
@@ -425,10 +499,23 @@ function loadImage(event) {
 
     reader.onload = function(e) {
         const imageContainer = document.getElementById('profile-pic');
+        const profileicon = document.getElementById('dash-profileicon');
         imageContainer.innerHTML = '<img src="' + e.target.result + '" alt="Uploaded Image" class="clear-blur">';
+        profileicon.src=e.target.result;
     }
 
     if (file) {
         reader.readAsDataURL(file);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
